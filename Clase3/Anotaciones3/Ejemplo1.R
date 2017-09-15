@@ -11,6 +11,9 @@ while(limite_superior-limite_superior>=1e-8){
 	if(f(punto_medio) < 0){	#Si es negativo, la raiz esta en [punto_medio,limite_superior]
 		limite_inferior <- punto_medio
 	}
+	else{ #Si no, la raiz esta en [limile_inferior,punto_medio]
+		limite_superior <- punto_medio
+	}
 }
 
 #Imprimimos al estilo del leguaje C el valor aproximado de la raiz

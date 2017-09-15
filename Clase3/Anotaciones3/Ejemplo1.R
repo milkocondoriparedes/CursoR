@@ -3,7 +3,7 @@ f <- function(x){ #Creamos una funcion f que tome como argumento x
 }
 
 limite_inferior <- -10 #limite inferior para el Metodo
-limite_superior <- -10 #limite superior para el Metodo
+limite_superior <- 10 #limite superior para el Metodo
 
 #mientras haya una diferencia mayor o igual a 10^8, iteramos
 while(limite_superior-limite_superior>=1e-8){

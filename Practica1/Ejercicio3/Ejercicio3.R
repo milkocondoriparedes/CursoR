@@ -1,20 +1,32 @@
 #Nombre: Betty Mendoza Chuquiruna 20150497B
+#        Cristhian Condori Paredes 20131422K
+
 #Respuesta N3:
  
-#a)El código muestra el vector:sexo y partido.
+#(a)El codigo muestra el vector "sexo" y "partido".
+sexo<-c("F","M","M","M","F","F","F","M","M","M","M","F","M","F","F","F","M","M","M","M")
+sexo
+[1] "F" "M" "M" "M" "F" "F" "F" "M" "M" "M" "M" "F" "M" "F" "F" "F" "M" "M" "M" "M"
+partido<-c("L","N","N","L","N","V","N","N","V","O","V","L","N","N","L","L","N","N","L","O")
+partido
+[1] "L" "N" "N" "L" "N" "V" "N" "N" "V" "O" "V" "L" "N" "N" "L" "L" "N" "N" "L" "O"
 
- sexo=c("F","M","M","M","F","F","F","M","M","M","M","F","M","F","F","F","M","M","M","M")
- partido=c("L","N","N","L","N","V","N","N","V","O","V","L","N","N","L","L","N","N","L","O")
+#(b)Se crean factores "partido" y "sexo" con la funcion factor, no tiene sentido hablar de la funcion ordered 
+#   puesto que no hay niveles entre los partidos ni el sexo, por defecto R organiza los niveles de forma alfabeticamente.
+partido<-factor(c("L","N","N","L","N","V","N","N","V","O","V","L","N","N","L","L","N","N","L","O"),levels=c("N","L","V","M","O"),labels=c("Nacional","Laboral","Verde","Maori","Otro"))
+partido
+  [1] Laboral  Nacional Nacional Laboral  Nacional Verde    Nacional Nacional Verde    Otro     Verde    Laboral  Nacional Nacional Laboral  Laboral  Nacional Nacional Laboral  Otro    
+Levels: Nacional Laboral Verde Maori Otro
 
-#b)Se crean factores, partido y sexo, no tiene sentido hablar de la funcion "ordered" puesto que no hay niveles entre los partidos ni el sexo, por defecto R 
-rganiza los niveles de forma alfabeticamente.
+sexo<-factor(c("F","M","M","M","F","F","F","M","M","M","M","F","M","F","F","F","M","M","M","M"),levels=c("F","M"),labels=c("Femenino","Masculino"))
+sexo
+[1] Femenino  Masculino Masculino Masculino Femenino  Femenino  Femenino  Masculino Masculino Masculino Masculino Femenino  Masculino Femenino  Femenino  Femenino  Masculino Masculino
+[19] Masculino Masculino
+Levels: Femenino Masculino
 
- partido=factor(c("L","N","N","L","N","V","N","N","V","O","V","L","N","N","L","L","N","N","L","O"),levels=c("N","L","V","M","O"),labels=c("Nacional","Laboral","Verde","Maori","Otro"))
- partido
- Laboral  Nacional Nacional Laboral  Nacional Verde    Nacional Nacional Verde    Otro     Verde    Laboral  Nacional Nacional Laboral  Laboral  Nacional Nacional Laboral  Otro    
- Levels: Nacional Laboral Verde Maori Otro
+#Se usa la funcion tapply para mostrar el "sexo" de cada "partido":
 tapply(sexo,partido,table)
-$`Nacional`
+$Nacional
 
  Femenino Masculino 
         3         6 
@@ -36,16 +48,9 @@ $Otro
 
  Femenino Masculino 
         0         2 
-
-
- sexo=factor(c("F","M","M","M","F","F","F","M","M","M","M","F","M","F","F","F","M","M","M","M"),levels=c("F","M"),labels=c("Femenino","Masculino"))
- sexo
- Femenino  Masculino Masculino Masculino Femenino  Femenino  Femenino  Masculino Masculino Masculino Masculino Femenino  Masculino Femenino  Femenino  Femenino 
- Masculino Masculino Masculino Masculino
- Levels: Femenino Masculino
-
- tapply(partido,sexo,table)
-$`Femenino`
+#Se usa la funcion tapply para mostrar el "partido" de cada "sexo":
+tapply(partido,sexo,table)
+$Femenino
 
 Nacional  Laboral    Verde    Maori     Otro 
        3        4        1        0        0 
@@ -55,23 +60,20 @@ $Masculino
 Nacional  Laboral    Verde    Maori     Otro 
        6        2        2        0        2 
 
-#C)El código muestra el uso de la función tapply:
-
+#(c)El codigo muestra el uso de la funcion tapply para mostrar el "partido" del "sexo Masculino":
 tapply(partido,sexo,table)[2]
-$`Masculino
+$Masculino
 
 Nacional  Laboral    Verde    Maori     Otro 
        6        2        2        0        2 
-
- tapply(sexo,partido,table)[1]
-$`Nacional
+#Asi como mostrar el "sexo" del "partido Nacional":
+tapply(sexo,partido,table)[1]
+$Nacional
 
  Femenino Masculino 
-        3         6 
+        3         6  
 
-
- 
-#d)El código muestra el uso de la funcion tapply:
+#(d)El codigo muestra el uso de la funcion tapply:
 sexo=factor(c("F","M","M","M","F","F","F","M","M","M","M","F","M","F","F","F","M","M","M","M","M","M","F","F","F","M"),levels=c("F","M"),labels=c("Femenino","Masculino"))
 sexo
  [1] Femenino  Masculino Masculino Masculino Femenino  Femenino  Femenino  Masculino Masculino Masculino Masculino Femenino  Masculino Femenino  Femenino  Femenino 

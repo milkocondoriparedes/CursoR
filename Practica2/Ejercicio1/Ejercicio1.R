@@ -1,4 +1,4 @@
-
+##Falta 1.b
 ##Preg1
 
 #Preg 1.a
@@ -8,3 +8,9 @@ search()
 ls(match("package:methods",search()))[1:20]
 #Y para el numero de elementos del paquete:
 length(ls(match("package:methods",search())))
+
+
+#Preg 1.c
+#ls(match("package:graphics",search())) es una cadena cuyos elementos son los elementos del paquete graphics, con %in% verificamos si la funcion smoothScatter se encuentra en la cadena o no
+search()
+"smoothScatter" %in% ls(match("package:graphics",search()))

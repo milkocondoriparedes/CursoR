@@ -1,4 +1,3 @@
-##Falta 1.b
 ##Preg1
 
 #Preg 1.a

@@ -1,85 +1,73 @@
 #Nombre: Betty Mendoza Chuquiruna 20150497B
 #        Cristhian Condori Paredes 20131422K
 
-#Respuesta N2:
- 
-#(a)El codigo muestra el uso de la funcion matrix para generar una matriz, en este caso ordenada por filas:
-x<-matrix(c(4.3,3.1,8.2,8.2,3.2,0.9,1.6,6.5),nrow=4,ncol=2,byrow=T)
-x
-     [,1] [,2]
-[1,]  4.3  3.1
-[2,]  8.2  8.2
-[3,]  3.2  0.9
-[4,]  1.6  6.5
+#Respuesta N7:
 
-#(b)El codigo muestra la eliminacion de la cuarta fila de la matriz "x":
-y<-x[-4,]
-y
-     [,1] [,2]
-[1,]  4.3  3.1
-[2,]  8.2  8.2
-[3,]  3.2  0.9
-#Asi como se usa funcion dim para mostrar las dimensiones de la matriz "y":
-dim(y)
-[1] 3 2
+#(a)El codigo muestra el almacenamiento del vector "f1":
+f1<-c(13563,-14156,-14319,16981,12921,11979,9568,8833,-12968,8133)
+f1
+[1]  13563 -14156 -14319  16981  12921  11979   9568   8833 -12968   8133
 
-#(c)El codigo muestra el uso de la funcion sort para el ordenamiento de la segunda columna de la matriz "x":
-x[,2]=sort(x[,2])
-x
-     [,1] [,2]
-[1,]  4.3  0.9
-[2,]  8.2  3.1
-[3,]  3.2  6.5
-[4,]  1.6  8.2
- 
-#(d)El codigo muestra la eliminacion de la cuarta columna y primera fila de la matriz "x":
-z<-matrix(x[-4,-1])
-z
-     [,1]
-[1,]  0.9
-[2,]  3.1
-[3,]  6.5
+#El codigo muestra el uso de IS.FINITE para mostrar que elementos son finitos:
+f1[is.finite(f1^75)]
+[1] 11979  9568  8833  8133
 
-#(e)El codigo muestra la seleccion de la tercera y cuarta fila de la matriz "x":
-w<-matrix(x[3:4,],nrow=2)
-w
-     [,1] [,2]
-[1,]  3.2  6.5
-[2,]  1.6  8.2
+#El codigo muestra el uso de WHICH para encontrar los elementos que cumplen una determinada condicion:
+f1[-which(f1^75==-Inf)]
+[1] 13563 16981 12921 11979  9568  8833  8133
 
-#(f)El codigo muestra el uso de la funcion diag:
-matrix(c(x[4,2],x[1,2],x[4,1],x[1,1]),nrow=2)-1/2*diag(w)
-     [,1] [,2]
-[1,]  6.6  0.0
-[2,] -3.2  0.2
+#(b)El codigo muestra el uso de la funcion MATRIX para almacenar la matriz "varMatriz":
+varMatriz<-matrix(c(77875.4,-35466.25,-39803.81,27551.45,-73333.85,55976.34,23764.3,36599.69,76694.82,-36478.88,-70585.69,47032),nrow=3,ncol=4)
+varMatriz
+         [,1]      [,2]     [,3]      [,4]
+[1,]  77875.40  27551.45 23764.30 -36478.88
+[2,] -35466.25 -73333.85 36599.69 -70585.69
+[3,] -39803.81  55976.34 76694.82  47032.00
 
-#(g)El codigo muestra el uso de la funcion diag para generar la matriz diagonal "A" y la matriz identidad "I" 
-A<-diag(c(2,3,5,-1))
-A
+#El codigo muestra la salida de "varMatriz" cuando se eleva a la 65 y se divide por infinito:
+varMatriz1<-varMatriz^65/Inf
+varMatriz1
      [,1] [,2] [,3] [,4]
-[1,]    2    0    0    0
-[2,]    0    3    0    0
-[3,]    0    0    5    0
-[4,]    0    0    0   -1
-I<-diag(c(1,1,1,1))
-I
-     [,1] [,2] [,3] [,4]
-[1,]    1    0    0    0
-[2,]    0    1    0    0
-[3,]    0    0    1    0
-[4,]    0    0    0    1
-#Asi como se usa la funcion solve que calcula la inversa de la matriz "A": 
-IA<-solve(A)
-IA
-     [,1]      [,2] [,3] [,4]
-[1,]  0.5 0.0000000  0.0    0
-[2,]  0.0 0.3333333  0.0    0
-[3,]  0.0 0.0000000  0.2    0
-[4,]  0.0 0.0000000  0.0   -1
-#Por ultimo se verifica que "IA*A-I" es una matriz nula:
-IA*A-I
-     [,1] [,2] [,3] [,4]
-[1,]    0    0    0    0
-[2,]    0    0    0    0
-[3,]    0    0    0    0
-[4,]    0    0    0    0
+[1,]  NaN    0    0    0
+[2,]    0  NaN    0  NaN
+[3,]    0  NaN  NaN    0
+#Se usa IS.NAN para mostrar que elementos son NaN, asi como se usa WHICH para encontrar la ubicacion de los elementos que cumplen la
+#condicion anterior:
+which(is.nan(varMatriz1),arr.ind=T)
+    row col
+[1,]   1   1
+[2,]   2   2
+[3,]   3   2
+[4,]   3   3
+[5,]   2   4
+
+#El codigo muestra el uso de !IS.NAN para mostrar los elementos de "varMatriz" que al elevarlos a la 67 y añadirles
+#el infinito no resultan NaN:
+varMatriz[!is.nan(varMatriz^67+Inf)]
+[1]  77875.40 -35466.25 -39803.81  27551.45  55976.34  23764.30  36599.69
+[8]  76694.82 -36478.88  47032.00
+#El codigo muestra los elementos de "varMatriz" que cumplen la condicion de que al elevarlos a la 67 no son iguales al
+#infinito negativo:
+varMatriz[varMatriz^67!=-Inf]
+[1]  77875.40 -35466.25 -39803.81  27551.45  55976.34  23764.30  36599.69
+[8]  76694.82 -36478.88  47032.00
+#Se observa que los 2 vectores anteriores son identicos.
+
+#El codigo muestra los elementos de "varMatriz" que cumplen cualquiera de las condiciones, que al elevarlos a la 67
+#resulten infinito negativo o(|) finito:
+varMatriz[varMatriz^67==-Inf|is.finite(varMatriz^67)]
+[1] -35466.25 -39803.81  27551.45 -73333.85  23764.30  36599.69 -36478.88
+[8] -70585.69
+
+#(c)El codigo muestra el almacenamiento del vector "f2":
+f2<-c(4.3,2.2,NULL,2.4,NaN,3.3,3.1,NULL,3.4,NA)
+#En el vector "f2" existen 2 NULL, estos no existen en el vetor, por lo que su longitud sera igual a 8(Verdadera),veamos:
+length(f2)
+[1] 8
+#Al llamar which(x=is.na(x=f2)) se ubicara los elementos de "f2" que sean NA o NaN, en este caso resultara 4 y 8(Falsa),veamos:
+which(x=is.na(x=f2))
+[1] 4 8
+#Al llamar is.null(x=f2) esta solo verificara si el vector "f2" es NULL o no(Falsa),veamos:
+is.null(x=f2)
+[1] FALSE
+

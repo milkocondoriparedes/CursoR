@@ -1,104 +1,31 @@
 #Nombre: Betty Mendoza Chuquiruna 20150497B
-#        Cristhian Condori Paredes 20131422K
+#Respuesta N5:
+#A)Se describirá la funcionalidad de cada llamda de función, así como los argumentos y explicación de estos mismos:
+#a)La función "plot.new", abre un nuevo cuadro de gráfico en donde se hará el trazado de un diagrama de dispersión. 
+#b)La funcion "plot.window(range(pressure$temperature),range(pressure$pressure))", configura el sistema de coordenadas para una ventana de gráficos y establece los límites para las coordenadas x e y en el gráfico, la función range puede usar vectores numéricos de longitud 2, que proporcionan los intervalos de coordenadas x e y.                                                                             
+#c)La función "box()", dibuja un cuadro alrededor de la gráfica actual en el color y tipo de línea dados. 
+#d)La funcion "axis(1)"	agrega un eje al gráfico actual, lo que permite la especificación del lado, posición, etiquetas y otras opciones. El argumento es un número entero que especifica en qué lado de la gráfica se dibujará el eje. El numero  1 = abajo, 2 = izquierda, 3 = arriba y 4 = derecha.
+#En este caso el eje será agregado en la parte de abajo del cuadro. Si no se especifican las etiquetas, los valores numéricos suministrados o calculados el vector numérico impreso por print.default (dígitos = 7).
+#Los tics se dibujan de izquierda a derecha o de abajo hacia arriba, y se deja espacio de al menos el tamaño de una 'm' entre etiqueta.
+#e)La función "axis(2)" es la misma definida en d) con la diferencia que el argumento es 2, es decir el eje será dibujado en la parte izquierda del cuadro.
+#f)la función "points(pressure$temperature, pressure$pressure)" dibuja una secuencia de puntos en las coordenadas especificadas. Los caracteres especificados se trazan, centrados en las coordenadas y alos ejes presión y temperatura.
+#g)La funcion "mtext("temperatura", side=1, line=3)" permite ingresar el texto está escrito en uno de los cuatro márgenes de la región de la figura actual o en uno de los márgenes exteriores de la región. El primer argumento de esta función es texto, donde se escribe el carácter o vector de expresión que se escribirá.
+#Side: Indica en que lado de la trama irá el texto (1 = abajo, 2 = izquierda, 3 = arriba, 4 = derecha). En este caso el texto se escribirá en la parte de abajo. Line, en la línea MARgin, empezando en 0 contando hacia afuera.
+#h)La función "mtext("presion", side=2, line=3)",se define y cumple las mismas condiciones que g), con al diferencia que el texto se escribirá en la parte izquierda del cuadro. 
+#i)La función "mtext("Presion de vapor de Mercurio\ncomo una funcion de la Temperatura",side=3, line=1, font=2)" se define y cumple las mismas condiciones que g), con la diferencia que el texto se escribirá en laa parte de arriba del cuadro y font cumple la función de fuente para texto
 
-#Respuesta N3:
+#B)El código muestra la implementación de la función "grid":
+plot.new()
+plot.window(range(pressure$temperature),range(pressure$pressure))
+box()
+axis(1)
+axis(2)
+grid(nx =7,ny=5,col="blue",lwd=2,lty="dotted",equilogs=TRUE)
+points(pressure$temperature, pressure$pressure)
+mtext("temperatura", side=1, line=3)
+mtext("presión", side=2, line=3)
+mtext("Presión de vapor de Mercurio\ncomo una función de la Temperatura",side=3, line=1, font=2)
  
-#(a)El codigo muestra el vector "sexo" y "partido".
-sexo<-c("F","M","M","M","F","F","F","M","M","M","M","F","M","F","F","F","M","M","M","M")
-sexo
-[1] "F" "M" "M" "M" "F" "F" "F" "M" "M" "M" "M" "F" "M" "F" "F" "F" "M" "M" "M" "M"
-partido<-c("L","N","N","L","N","V","N","N","V","O","V","L","N","N","L","L","N","N","L","O")
-partido
-[1] "L" "N" "N" "L" "N" "V" "N" "N" "V" "O" "V" "L" "N" "N" "L" "L" "N" "N" "L" "O"
-
-#(b)Se crean factores "partido" y "sexo" con la funcion factor, no tiene sentido hablar de la funcion ordered 
-#   puesto que no hay niveles entre los partidos ni el sexo, por defecto R organiza los niveles de forma alfabeticamente.
-partido<-factor(c("L","N","N","L","N","V","N","N","V","O","V","L","N","N","L","L","N","N","L","O"),levels=c("N","L","V","M","O"),labels=c("Nacional","Laboral","Verde","Maori","Otro"))
-partido
-  [1] Laboral  Nacional Nacional Laboral  Nacional Verde    Nacional Nacional Verde    Otro     Verde    Laboral  Nacional Nacional Laboral  Laboral  Nacional Nacional Laboral  Otro    
-Levels: Nacional Laboral Verde Maori Otro
-
-sexo<-factor(c("F","M","M","M","F","F","F","M","M","M","M","F","M","F","F","F","M","M","M","M"),levels=c("F","M"),labels=c("Femenino","Masculino"))
-sexo
-[1] Femenino  Masculino Masculino Masculino Femenino  Femenino  Femenino  Masculino Masculino Masculino Masculino Femenino  Masculino Femenino  Femenino  Femenino  Masculino Masculino
-[19] Masculino Masculino
-Levels: Femenino Masculino
-
-#Se usa la funcion tapply para mostrar el "sexo" de cada "partido":
-tapply(sexo,partido,table)
-$Nacional
-
- Femenino Masculino 
-        3         6 
-
-$Laboral
-
- Femenino Masculino 
-        4         2 
-
-$Verde
-
- Femenino Masculino 
-        1         2 
-
-$Maori
-NULL
-
-$Otro
-
- Femenino Masculino 
-        0         2 
-#Se usa la funcion tapply para mostrar el "partido" de cada "sexo":
-tapply(partido,sexo,table)
-$Femenino
-
-Nacional  Laboral    Verde    Maori     Otro 
-       3        4        1        0        0 
-
-$Masculino
-
-Nacional  Laboral    Verde    Maori     Otro 
-       6        2        2        0        2 
-
-#(c)El codigo muestra el uso de la funcion tapply para mostrar el "partido" del "sexo Masculino":
-tapply(partido,sexo,table)[2]
-$Masculino
-
-Nacional  Laboral    Verde    Maori     Otro 
-       6        2        2        0        2 
-#Asi como mostrar el "sexo" del "partido Nacional":
-tapply(sexo,partido,table)[1]
-$Nacional
-
- Femenino Masculino 
-        3         6  
-
-#(d)El codigo muestra el uso de la funcion tapply:
-sexo=factor(c("F","M","M","M","F","F","F","M","M","M","M","F","M","F","F","F","M","M","M","M","M","M","F","F","F","M"),levels=c("F","M"),labels=c("Femenino","Masculino"))
-sexo
- [1] Femenino  Masculino Masculino Masculino Femenino  Femenino  Femenino  Masculino Masculino Masculino Masculino Femenino  Masculino Femenino  Femenino  Femenino 
-[17] Masculino Masculino Masculino Masculino Masculino Masculino Femenino  Femenino  Femenino  Masculino
-Levels: Femenino Masculino
- partido=factor(c("L","N","N","L","N","V","N","N","V","O","V","L","N","N","L","L","N","N","L","O","N","M","M","L","V","L"),levels=c("N","L","V","M","O"),labels=c("Nacional","Laboral","Verde","Maori","Otro"))
-partido
- [1] Laboral  Nacional Nacional Laboral  Nacional Verde    Nacional Nacional Verde    Otro     Verde    Laboral  Nacional Nacional Laboral  Laboral  Nacional
-[18] Nacional Laboral  Otro     Nacional Maori    Maori    Laboral  Verde    Laboral 
-Levels: Nacional Laboral Verde Maori Otro
- confianza=factor(c("t","d","u","t","d","t","d","u","d","d","d","d","d","d","d","d","d","d","d","u","u","d","t","u","d","u"),levels=c("u","d","t"),labels=c("Bajo","Moderado","Alto"))
- confianza
- [1] Alto     Moderado Bajo     Alto     Moderado Alto     Moderado Bajo     Moderado Moderado Moderado Moderado Moderado Moderado Moderado Moderado Moderado
-[18] Moderado Moderado Bajo     Bajo     Moderado Alto     Bajo     Moderado Bajo    
-Levels: Bajo Moderado Alto
-
- tapply(confianza,partido,table)[2]
-$`Laboral
-
-    Bajo Moderado     Alto 
-       2        4        2 
-
-> tapply(confianza,partido,table)[1]
-$`Nacional
-
-    Bajo Moderado     Alto 
-       3        7        0 
-
+#El parámetro "grid", genera una cuadrícula rectangular al cuadro ya establecido, teniendo como argumentos "nx", cuantifica el número de la cuadrïcula en dirección del eje "x",de la misma forma "ny",cuantifica el número de la cuadrícula en dirección del eje "y".
+#El parámetro "col", determina el color de las líneas de la cuadrícula.El parámetro "lwd", proporciona el ancho de la línea númerica.
+#El parámetro "lty",esta referido con el tipo de línea de la cuadrícula y El parámetro "equilogs" solo se usa cuando las coordenadas del registro y la alineación con las marcas de eje están activas. 

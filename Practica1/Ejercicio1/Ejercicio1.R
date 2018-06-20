@@ -2,7 +2,7 @@
 #        Cristhian Condori Paredes 20131422K
 #        Elias Llampi Aliaga 20141460B
 
-#Respuesta1:
+#RespuestaN1:
 
  #(a)El codigo muestra el uso de la funcion SEQ para generar un vector que progresa aritmeticamente:
  x<-seq(5,-11,by=-0.3)

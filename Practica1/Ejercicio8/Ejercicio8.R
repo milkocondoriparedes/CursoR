@@ -30,6 +30,18 @@ dframe
 6    Klaus    M      Medio   60
 
 #(c)El codigo muestra
+#Se reordena el dframe:
+dframe<-data.frame(persona=dframe[1],edad=dframe[4],sexo=dframe[2],puntuacion=dframe[3])
+dframe
+   persona edad sexo puntuacion
+1     Stan   41    M       Alto
+2 Francine   41    F      Medio
+3    Steve   15    M       Bajo
+4    Roger 1600    M       Alto
+5   Hayley   21    F      Medio
+6    Klaus   60    M      Medio
+
+#(d)El codigo muestra:
 misdatos<-data.frame(persona=c("Peter","Lois","Meg","Chris","Stewie"),edad=c(42,40,17,14,1),sexo=factor(c("M","F","F","M","M")))
 misdatos
   persona edad sexo
@@ -38,7 +50,45 @@ misdatos
 3    Meg   17    F
 4  Chris   14    M
 5 Stewie    1    M
-                   
-                   
-                   
-                   
+
+misdatos$edad.mon <- misdatos$edad*12
+misdatos
+  persona edad sexo edad.mon
+1   Peter   42    M      504
+2    Lois   40    F      480
+3     Meg   17    F      204
+4   Chris   14    M      168
+5  Stewie    1    M       12
+
+misdatos2<-misdatos[,-4]
+misdatos2
+  persona edad sexo
+1   Peter   42    M
+2    Lois   40    F
+3     Meg   17    F
+4   Chris   14    M
+5  Stewie    1    M
+#Se crea una columna de puntuacion para mis datos 2
+misdatos2$puntuacion <- NA
+misdatos2
+  persona edad sexo puntuacion
+1   Peter   42    M         NA
+2    Lois   40    F         NA
+3     Meg   17    F         NA
+4   Chris   14    M         NA
+5  Stewie    1    M         NA
+#se combina misdatos2 con dframe
+misdatosframe<-rbind(dframe,misdatos2)
+misdatosframe
+    persona edad sexo puntuacion
+1      Stan   41    M       Alto
+2  Francine   41    F      Medio
+3     Steve   15    M       Bajo
+4     Roger 1600    M       Alto
+5    Hayley   21    F      Medio
+6     Klaus   60    M      Medio
+7     Peter   42    M       <NA>
+8      Lois   40    F       <NA>
+9       Meg   17    F       <NA>
+10    Chris   14    M       <NA>
+11   Stewie    1    M       <NA>

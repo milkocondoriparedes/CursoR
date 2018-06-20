@@ -1,5 +1,6 @@
 #Nombre: Betty Mendoza Chuquiruna 20150497B
 #        Cristhian Condori Paredes 20131422K
+#        Elias Llampi Aliaga 	20141460B
 
 #Respuesta1:
 
@@ -31,7 +32,7 @@
  z<-c(c(6:12),rep(5.3,3),-3,seq(length=9,from=102,to=length(y)))
  z
  [1]   6.00   7.00   8.00   9.00  10.00  11.00  12.00   5.30   5.30   5.30  -3.00 102.00 101.75 101.50 101.25 101.00 100.75 100.50 100.25 100.00
- #Se usa la funcion LENGTH para mostrar la longitud del vector "z":
+ #Se usa LENGTH para mostrar la longitud del vector "z":
  length(z)
  [1] 20
 

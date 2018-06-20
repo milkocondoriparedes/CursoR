@@ -1,5 +1,6 @@
 #Nombre: Betty Mendoza Chuquiruna 20150497B
 #        Cristhian Condori Paredes 20131422K
+#        Elias Llampi Aliaga 20141460B
 
 #Respuesta N7:
 
@@ -61,7 +62,7 @@ varMatriz[varMatriz^67==-Inf|is.finite(varMatriz^67)]
 
 #(c)El codigo muestra el almacenamiento del vector "f2":
 f2<-c(4.3,2.2,NULL,2.4,NaN,3.3,3.1,NULL,3.4,NA)
-#En el vector "f2" existen 2 NULL, estos no existen en el vetor, por lo que su longitud sera igual a 8(Verdadera),veamos:
+#En el vector "f2" existen 2 NULL, estos no existen en el vector, por lo que su longitud sera igual a 8(Verdadera),veamos:
 length(f2)
 [1] 8
 #Al llamar which(x=is.na(x=f2)) se ubicara los elementos de "f2" que sean NA o NaN, en este caso resultara 4 y 8(Falsa),veamos:

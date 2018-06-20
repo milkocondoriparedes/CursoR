@@ -1,5 +1,6 @@
 #Nombre: Betty Mendoza Chuquiruna 20150497B
 #        Cristhian Condori Paredes 20131422K
+#        Elias Llampi Aliaga 20141460B
 
 #Respuesta N8:
  
@@ -17,7 +18,7 @@ dframe
 5   Hayley    F      Medio
 6    Klaus    M      Medio
 
-#(b)El codigo muestra 
+#(b)El codigo muestra la adicion del vector "edad" en el DATA FRAME "dframe":
 edad<-c(41,41,15,1600,21,60)
 dframe<-data.frame(dframe,edad)
 dframe
@@ -29,8 +30,7 @@ dframe
 5   Hayley    F      Medio   21
 6    Klaus    M      Medio   60
 
-#(c)El codigo muestra
-#Se reordena el dframe:
+#(c)El codigo muestra el reordenamiento de las columnas del DATA FRAME "dframe":
 dframe<-data.frame(persona=dframe[1],edad=dframe[4],sexo=dframe[2],puntuacion=dframe[3])
 dframe
    persona edad sexo puntuacion
@@ -41,7 +41,7 @@ dframe
 5   Hayley   21    F      Medio
 6    Klaus   60    M      Medio
 
-#(d)El codigo muestra:
+#(d)El codigo muestra el almacenamiento de datos en un DATA FRAME "misdatos":
 misdatos<-data.frame(persona=c("Peter","Lois","Meg","Chris","Stewie"),edad=c(42,40,17,14,1),sexo=factor(c("M","F","F","M","M")))
 misdatos
   persona edad sexo
@@ -51,6 +51,7 @@ misdatos
 4  Chris   14    M
 5 Stewie    1    M
 
+#El codigo muestra como se almacena una nueva variable "edad.mon" en el DATA FRAME "misdatos": 
 misdatos$edad.mon <- misdatos$edad*12
 misdatos
   persona edad sexo edad.mon
@@ -60,6 +61,7 @@ misdatos
 4   Chris   14    M      168
 5  Stewie    1    M       12
 
+#Se elimina la cuarta columna del DATA FRAME "misdatos" y se almacena en "misdatos2":
 misdatos2<-misdatos[,-4]
 misdatos2
   persona edad sexo
@@ -68,7 +70,9 @@ misdatos2
 3     Meg   17    F
 4   Chris   14    M
 5  Stewie    1    M
-#Se crea una columna de puntuacion para mis datos 2
+
+#Se crea una nueva variable "puntuacion" y se almacena en el DATA FRAME "misdatos2", ya que para combinarlo
+#con el DATA FRAME "dframe" deben tener igual numero de variables:
 misdatos2$puntuacion <- NA
 misdatos2
   persona edad sexo puntuacion
@@ -77,7 +81,9 @@ misdatos2
 3     Meg   17    F         NA
 4   Chris   14    M         NA
 5  Stewie    1    M         NA
-#se combina misdatos2 con dframe
+
+#Ya que el DATA FRAME "dframe" y "misdatos2" tienen igual numero de variables o columnas, se usa
+#la funcion RBIND para poder juntarlos en un nuevo DATA FRAME "misdatosframe":
 misdatosframe<-rbind(dframe,misdatos2)
 misdatosframe
     persona edad sexo puntuacion

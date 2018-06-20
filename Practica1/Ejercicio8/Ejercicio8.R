@@ -29,6 +29,15 @@ dframe
 5   Hayley    F      Medio   21
 6    Klaus    M      Medio   60
 
+#(c)El codigo muestra
+misdatos<-data.frame(persona=c("Peter","Lois","Meg","Chris","Stewie"),edad=c(42,40,17,14,1),sexo=factor(c("M","F","F","M","M")))
+misdatos
+  persona edad sexo
+1  Peter   42    M
+2   Lois   40    F
+3    Meg   17    F
+4  Chris   14    M
+5 Stewie    1    M
                    
                    
                    

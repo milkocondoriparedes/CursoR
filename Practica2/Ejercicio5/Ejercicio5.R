@@ -16,7 +16,7 @@ if(minum<0)
   cat("No se permiten numeros negativos")
 }else
 {
-  #Se usa la condicion para que "minum" no falle cuando es 0:
+  #Se usa la condicion para que "minum" no falle cuando es 0 o 1:
   if(minum==0||minum==1)
     {xfactorial<-1}
   else

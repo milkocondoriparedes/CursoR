@@ -4,7 +4,7 @@
 
 #RespuestaN1
 
-#(a)Si el paquete METHODS se carga al iniciar de modo automatico lo podemos encontrar con SEARCH(), que devuelve 
+#(a)Si el paquete METHODS se carga al iniciar de modo automatico lo podemos encontrar con SEARCH, que devuelve 
 #una trayectoria de busqueda con listas, bibliotecas y hojas de datos que se estan usando.
 #Con esto en cuenta usamos funciones de busqueda y comparacion MATCH para encontrar los 20 primeros elementos:  
 ls(match("package:methods",search()))[1:20]
@@ -18,7 +18,7 @@ ls(match("package:methods",search()))[1:20]
 length(ls(match("package:methods",search())))
 [1] 218
 
-#(b)Las librerias o paquetes a la que pertenece una funcion en especifico se obtiene usando el comando HELP()
+#(b)Las librerias o paquetes a la que pertenece una funcion en especifico se obtiene usando el comando HELP.
 #Para la funcion READ.TABLE:
 help("read.table")
 #Se observa que pertenece al paquete utils.

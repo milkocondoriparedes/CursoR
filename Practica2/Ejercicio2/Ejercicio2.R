@@ -45,7 +45,7 @@ help(which)
 which(matrix(c(T,F,T,T),2,2))
 [1] 1 3 4
 
-
+help(which)
 #Se obtiene: which(x, arr.ind = FALSE, useNames = TRUE) para "x" vector o array.
 #El primer argumento es posicionaly el segundo argumento es parcial. Estilo de coincidencia mixto.
 which(matrix(c(T,F,T,T),2,2),a=T)

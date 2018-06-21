@@ -67,12 +67,12 @@ for(i in 1:length(unalista))
     #Se anida otro bucle dentro del bucle:
     for (j in 1:length(elemento))
     {
-      #La variable "contador" se matiene si el tamaño de la dimension de "unalista" es igual 0:
+      #La variable "contador" se matiene si el tamaño de la dimension de los elementos dentro de "unalista" es igual 0:
       if(length(dim(elemento[[j]]))==0)
       {
            contador<-contador+0
       }
-      #La variable "contador" aumenta en 1 si el tamaño de la dimension de "unalista" es distinto de 0:
+      #La variable "contador" aumenta en 1 si el tamaño de la dimension de los elementos dentro de "unalista" es distinto de 0:
       else
       {contador<-contador+1}
     }

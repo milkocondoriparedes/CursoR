@@ -1,23 +1,39 @@
-###PREG3
-#Preg3.a
-vec1 <- c(2,1,1,3,2,1,0)
-vec2 <- c(3,8,2,2,0,0,0)
+#Nombre: Betty Mendoza Chuquiruna 20150497B
+#        Cristhian Condori Paredes 20131422K
+#        Elias Llampi Aliaga 20141460B
 
-#Aqui vec1[1]=2, vec2[2]=8, entonces el la condicion vec1[1]+vec2[2]=10 es verdadera, por lo que se imprimira el mensaje
+#RespuestaN3:
+
+#(a)Se crea los vectores "vec1" y "vec2":
+vec1<-c(2,1,1,3,2,1,0)
+vec1
+[1] 2 1 1 3 2 1 0
+vec2<-c(3,8,2,2,0,0,0)
+vec2
+[1] 3 8 2 2 0 0 0
+
+#Aqui vec1[1]=2, vec2[2]=8, entonces el la condicion vec1[1]+vec2[2]=10 es verdadera, por lo que se imprimira el mensaje.
 if((vec1[1]+vec2[2])==10){ cat("Imprime el resultado!") }
+Imprime el resultado!
 
-#vec1[1]=2,vec2[1]=3, como ambos enunciados son verdaderos, el mensaje se imprimira
-if(vec1[1]>=2&&vec2[1]>=2){ cat("Imprime el resultado!") }
+#Aqui vec1[1]=2, vec2[1]=3, como ambos enunciados son verdaderos, el mensaje se imprimira.
+if(vec1[1]>=2 && vec2[1]>=2){ cat("Imprime el resultado!") }
+Imprime el resultado!
 
-#La funcion all recibe un conjunto de vectres logicos y comprueba si todos son verdaderos,en esta linea vec2-vec1=(1,7,1,-1,-2,-1,0), con esto 
-#El segundo (7) y sexto elemento (-1) de este nuevo vector deben cumplir que son menores que 7, como el segndo elemento no cumple, el resultado es falso, con lo que la cadena no se imprime
+#La funcion ALL recibe un conjunto de vectores logicos y comprueba si todos son verdaderos.
+#vec2-vec1 = (1,7,1,-1,-2,-1,0), asi:
+#El segundo (vec2-vec1)[2]=7 y (vec2-vec1)[6]=-1, se observa que 7 no cumple la condicion,
+#por lo que el resultado es falso y el mensaje no se imprime.
 if(all((vec2-vec1)[c(2,6)]<7)){ cat("Imprime el resultado!") }
 
-#La funcion is.na(x) crea un vector logico del tamaño de x cuyos elementos solo valdran TRUE si el elemento correspondiente de x es NA, y FALSE en caso contrario.
-#La condicion en este caso debe ser lo contrario de la funcion is.na(x), asi, sera verdadero cando x sea diferente a NA.  Como vec2[3]=2,diferente a Na, la cadena se imprimirra
+#La funcion IS.NA crea un vector logico cuyos elementos solo valdran TRUE si el elemento correspondiente es NA, y FALSE en caso contrario.
+#La condicion en este caso debe ser lo contrario de la funcion IS.NA.
+#Como vec2[3]=2, diferente a NA, el mensaje se imprimira.
 if(!is.na(vec2[3])){ cat("Imprime el resultado!") }
+Imprime el resultado!
 
-#Preg3.b
+#(b)El codigo muestra la multiplicacion los elementos correspondientes de los dos vectores juntos si su suma es mayor que 3. 
+#En caso no lo sea el codigo muestra la suma de los dos elementos.
 vec3<-vec1
 for (i in 1: length(vec1)) 
 {
@@ -31,14 +47,14 @@ for (i in 1: length(vec1))
   }
 }
 vec3
+[1] 6 8 3 6 2 1 0
 
-#Preg3.c
-#Creamos unua funcion para almacenar el codigo
+#(c)Creamos una funcion para almacenar el codigo:
 verificarMatr<-function(mymat)
 {
   #Inicializamos un contador para comprobar cuantas veces se reemplaza la palabra AQUI
   contador<-0
-  #Como la matriz es cuadrada, su longitud sera n^2, asi, la dimension de mymat sera sqrt(length(mymat)) ó tambien dim(mymat)[1]
+  #Como la matriz es cuadrada, su longitud sera n^2, asi, la dimension de mymat sera sqrt(length(mymat)) o tambien dim(mymat)[1]
   for (i in 1: sqrt(length(mymat)))
   {
     if(substring(mymat[i,i][1],1,1)=="g" || substring(mymat[i,i][1],1,1)=="G")
@@ -53,10 +69,26 @@ verificarMatr<-function(mymat)
   }
   mymat
 }
-#Probamos la funcion con las matrices dadas
+
+#Probamos la funcion con las matrices dadas:
 mymat <- matrix(as.character(1:16),4,4)
 verificarMatr(mymat)
+    [,1] [,2] [,3] [,4]
+[1,]    1    0    0    0
+[2,]    0    1    0    0
+[3,]    0    0    1    0
+[4,]    0    0    0    1
+
 mymat <- matrix(c("GREAT","ejercicioss","agua","hey"),2,2,byrow=T)
 verificarMatr(mymat)
+     [,1]   [,2]         
+[1,] "AQUI" "ejercicioss"
+[2,] "agua" "hey"   
+
 mymat <- matrix(c("DANDELION","Hyacinthus","Gerbera","MARIGOLD","geranium","ligularia","Pachysandra","SNAPDRAGON","GLADIOLUS"),3,3)
 verificarMatr(mymat)
+     [,1]         [,2]        [,3]         
+[1,] "DANDELION"  "MARIGOLD"  "Pachysandra"
+[2,] "Hyacinthus" "AQUI"      "SNAPDRAGON" 
+[3,] "Gerbera"    "ligularia" "AQUI"
+

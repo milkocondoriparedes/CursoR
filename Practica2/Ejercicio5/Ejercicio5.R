@@ -10,7 +10,7 @@
 
 #La variable "minum" se iniciara en 0 , lo cual tendra que devolver 1 en el resultado:
 minum<-0
-#Se usa la condicion para que no se permitan numeros negaticos:
+#Se usa la condicion para que no se permitan numeros negativos:
 if(minum<0)
 {
   cat("No se permiten numeros negativos")

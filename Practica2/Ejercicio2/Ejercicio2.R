@@ -34,7 +34,7 @@ seq(from=10,to=8,length=5)
 [1] 10.0  9.5  9.0  8.5  8.0
 
 help(sort)
-#Se obtiene: sort.int(x, partial = NULL, na.last = NA, decreasing = FALSE,method = c("auto", "shell", "quick", "radix"), index.return = FALSE).
+#Se obtiene: sort(x, decreasing = FALSE, ...).
 #El primer argumento es exacto y el segundo argumento es exacto. Estilo de coincidencia: exacto.
 sort(decreasing=T,x=c(2,1,1,2,0.3,3,1.3))
 [1] 3.0 2.0 2.0 1.3 1.0 1.0 0.3

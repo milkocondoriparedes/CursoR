@@ -1,49 +1,45 @@
+#Nombre: Betty Mendoza Chuquiruna 20150497B
+#        Cristhian Condori Paredes 20131422K
+#        Elias Llampi Aliaga 20141460B
 
-#FALTA PARTE B
-#####PREGUNTA 5
+#RespuestaN5:
 
-###Pregunta 5.a
-#Escribe un bucle while que calcule y almacena como un nuevo objeto el factorial de cualquier
-#número entero entero no negativo al decrementar minum por 1 en cada repetición del código.
-#Usando este ciclo, confirma lo siguiente:
+#(a)El codigo muestra un bucle WHILE que calcula y almacena como un nuevo objeto el factorial de cualquier
+#numero entero no negativo al decrementar la variable "minum" por 1 en cada repetición del codigo.
+#La variable "xfactorial" almacenara el resultado del factorial:
 
-#• Qué el resultado de usar minum <- 5 es 120.
-#• Qué usando minum <- 12 produce 479001600.
-#• El valor de minum <- 0 devuelve correctamente 1.
-
-#Llamaremos xfactorial a nuestro codigo que calculara el factorial
-#Almacenamos un numero en minum
-#Se elige el valor, primero minum = 0
-
+#La variable "minum" se iniciara en 0 , lo cual tendra que devolver 1 en el resultado:
 minum<-0
-
-##A partir de aqui es el codigo de xfactorial
+#Se usa la condicion para que no se permitan numeros negaticos:
 if(minum<0)
 {
   cat("No se permiten numeros negativos")
 }else
 {
+  #Se usa la condicion para que "minum" no falle cuando es 0:
   if(minum==0||minum==1)
     {xfactorial<-1}
   else
   {
+    #Se guarda en "xfactorial" el primer valor de "minum":
     xfactorial<-minum
+    #Se crea un "auxiliar" que guarda a "minum":
     auxiliar<-minum
+    #Se usa el bucle WHILE que sale cuando "auxiliar" toma el valor de 1:
     while(auxiliar > 1)
-    {
+    { 
+      #La variable "xfactorial" va guardando el resultado"
       xfactorial<-xfactorial*(auxiliar-1)
+      #Mientras que "auxiliar" va disminuyendo en 1:
       auxiliar<-auxiliar-1
     }
   }
 }
 xfactorial
+[1] 1
 
-
-
-#Ahora minum=5
+#Veamos el caso para "minum" igual a 5:
 minum<-5
-
-##A partir de aqui es el codigo de xfactorial
 if(minum<0)
 {
   cat("No se permiten numeros negativos")
@@ -63,11 +59,10 @@ if(minum<0)
   }
 }
 xfactorial
+[1] 120
 
-#Ahora minum=12
+#Veamos el caso para "minum" igual a 12:
 minum<-12
-
-##A partir de aqui es el codigo de xfactorial
 if(minum<0)
 {
   cat("No se permiten numeros negativos")
@@ -87,6 +82,6 @@ if(minum<0)
   }
 }
 xfactorial
+[1] 479001600
 
-
-##Pregnta 5.b
+#(b)

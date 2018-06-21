@@ -2,7 +2,7 @@
 #        Cristhian Condori Paredes 20131422K
 #        Elias Llampi Aliaga 20141460B
 
-#RespuestaN1
+#RespuestaN1:
 
 #(a)Si el paquete METHODS se carga al iniciar de modo automatico lo podemos encontrar con SEARCH, que devuelve 
 #una trayectoria de busqueda con listas, bibliotecas y hojas de datos que se estan usando.

@@ -1,7 +1,9 @@
 
+#Nombre: Betty Mendoza Chuquiruna 20150497B
+#        Cristhian Condori Paredes 20131422K
+#        Elias Llampi Aliaga 20141460B
 
-###PREG7
-#Preg7.a
+#Parte a
 #La subcadena "??...??" se asemeja a n lanzamiento de monedas, donde "?" puede ser + o -, cada uno con %50 de probabilidad,
 #Ademas, si contabilizamos el # de signos + en lacadena B y la comparamos con la cadena A, obtenemos el # de signos + que harian falta
 #La resolucion del problema es un caso de distribucion binomial, donde el total de intentos es 2^(# de ?) y el numero de casos favorables
@@ -37,7 +39,7 @@ fun()
 # si queremos ingresar nuevas pruebas, simplemente escribimos fun() y tipeamos las entradas cuando las pida
 fun()
 
-## parte b de la 7
+## parte b
 funcion2 <-function()
 {
     #Almacenamos las sumas de los dados en un vector y el numero de combinaciones de dados que lo hacen posible en otro

@@ -85,3 +85,21 @@ xfactorial
 [1] 479001600
 
 #(b)
+
+unacadena <- "R fever"
+index <- 1
+ecount <- 0
+resultado <- unacadena
+while(ecount<2 && index<=nchar(unacadena)){
+
+  if (substr(unacadena,index,index) == "e" || substr(unacadena,index,index) == "E" )
+  {
+    ecount <- ecount + 1
+  }
+  if(ecount == 2)
+  {
+    resultado<-substr(unacadena,1,index-1)
+  }
+  index <- index +1
+}
+ resultado

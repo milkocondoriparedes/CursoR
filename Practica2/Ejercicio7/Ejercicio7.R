@@ -34,7 +34,8 @@ fun()
 +-+-
 +-??
   
-# si queremos ingresar nuevas prebas, simplemente escribimos fun() y tipeamos las entradas cuando las pida
+# si queremos ingresar nuevas pruebas, simplemente escribimos fun() y tipeamos las entradas cuando las pida
+fun()
 
 ## parte b de la 7
 funcion2 <-function()
@@ -44,9 +45,9 @@ funcion2 <-function()
   vector1 <- c(3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18)
   vector2 <- c(1,3,6,10,15,21,25,27,27,25,21,15,10,6,3,1)
   
-  #pedimos la suma que obtvo vilma y lo almacenamos
+  #pedimos la suma que obtuvo vilma y lo almacenamos
   primer_numero<-readline("Ingresar la suma que obtuvo Vilma ")
-  #pedimos la suma que obtvo esther y lo almacenamos
+  #pedimos la suma que obtuvo esther y lo almacenamos
   segundo_numero<-readline("Ingresar la suma que obtuvo Esther ")
   #obtenemos el maximo de esos numeros pedidos entre vilma y esther
   suma_max <- max(segundo_numero,primer_numero)

@@ -3,8 +3,9 @@
 #        Cristhian Condori Paredes 20131422K
 #        Elias Llampi Aliaga 20141460B
 
-#Parte a
-#La subcadena "??...??" se asemeja a n lanzamiento de monedas, donde "?" puede ser + o -, cada uno con %50 de probabilidad,
+#RespuestaN7:
+
+#(a)La subcadena "??...??" se asemeja a n lanzamiento de monedas, donde "?" puede ser + o -, cada uno con %50 de probabilidad,
 #Ademas, si contabilizamos el # de signos + en lacadena B y la comparamos con la cadena A, obtenemos el # de signos + que harian falta
 #La resolucion del problema es un caso de distribucion binomial, donde el total de intentos es 2^(# de ?) y el numero de casos favorables
 #es el # de signos +(o -) que hacen falta en la cadena de A
@@ -30,16 +31,18 @@ fun<-function()
 fun()
 ++-+-
 +-+-+
+La probabilidad de que A coloque bien la antena es: 
+[1] "1.000000000"
   
 #Probamos la funcion para el ejemplo 2
 fun()
 +-+-
 +-??
-  
-# si queremos ingresar nuevas pruebas, simplemente escribimos fun() y tipeamos las entradas cuando las pida
-fun()
+La probabilidad de que A coloque bien la antena es: 
+[1] "0.500000000"
 
-## parte b
+ 
+#(b)El codigo muestra el uso de la "funcion2" para calcular las probabilidades de un determiando evento:
 funcion2 <-function()
 {
     #Almacenamos las sumas de los dados en un vector y el numero de combinaciones de dados que lo hacen posible en otro
@@ -64,10 +67,10 @@ funcion2 <-function()
   cat("La probabilidad de que Jessica gane es:  ")
   cat(suma,"/","216")
 }
+
 #Si queremos probar los datos del ejemplo:
 funcion2()
 4
 4
+La probabilidad de que Jessica gane es:  215 / 216
 
-#Probamos el codigo con un dato ingresado por el usuario
-funcion2()

@@ -4,7 +4,7 @@
 
 #RespuestaN8:
 
-#El codigo muestra una mejora de la funcion SOLVE para determinar la matriz inversa de listas: 
+#El codigo muestra una mejora de la funcion SOLVE para determinar la inversa de una lista de matrices: 
 x.env<-new.env()
 x.env$x
 invMat<-function(x, noninv = "NA", nonmat = "No es una matriz", silent = TRUE)

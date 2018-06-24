@@ -84,14 +84,13 @@ if(minum<0)
 xfactorial
 [1] 479001600
 
-#(b)
-
+#(b)Se completa el codigo en la parte de la funcion WHILE con el uso de SUBSTR para extraer 
+#el único carácter de "unacadena" en la posición "index", veamos:
 unacadena <- "R fever"
 index <- 1
 ecount <- 0
 resultado <- unacadena
 while(ecount<2 && index<=nchar(unacadena)){
-
   if (substr(unacadena,index,index) == "e" || substr(unacadena,index,index) == "E" )
   {
     ecount <- ecount + 1
@@ -102,4 +101,6 @@ while(ecount<2 && index<=nchar(unacadena)){
   }
   index <- index +1
 }
- resultado
+resultado
+[1] "R fev"
+
